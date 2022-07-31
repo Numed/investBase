@@ -58,6 +58,7 @@ export const Card = styled.div`
   color: #222;
   filter: drop-shadow(2px 1px 7px rgba(0, 0, 0, 0.25));
   position: relative;
+  border-radius: 7px;
 `;
 
 export const FrontCard = styled.div`
@@ -66,19 +67,91 @@ export const FrontCard = styled.div`
   align-items: center;
   justify-content: flex-start;
   width: 100%;
-  height: 100%;
+  z-index: 2;
   padding: 40px 25px 20px;
-  border-radius: 7px;
+  height: 100%;
   backface-visibility: hidden;
   transform: rotateY(0);
   transition: -webkit-transform 1s ease-in-out;
   transition: transform 1s ease-in-out;
-  transition: transform 1s ease-in-out, -webkit-transform 1s ease-in-out;
-  transform-style: preserve-3d;
+
+  &:hover {
+    transform: rotateY(180deg);
+    z-index: -1;
+    display: none;
+    transition: transform 1s ease-in-out, -webkit-transform 1s ease-in-out;
+    transform-style: preserve-3d;
+  }
+
+  &:hover + .sc-ckMVTt {
+    display: block;
+    z-index: 2;
+  }
 `;
 
 export const BackCard = styled.div`
   display: none;
+  background: ${(props) => {
+    if (props.brown) {
+      return "#d5a11d";
+    } else if (props.lightBlue) {
+      return "#73c7dc";
+    } else if (props.green) {
+      return "#21ce99";
+    } else {
+      return "#2a5ada";
+    }
+  }};
+  text-align: center;
+  height: 100%;
+  color: #fff;
+  border-radius: 7px;
+  backface-visibility: hidden;
+  padding: 40px 25px 20px;
+  &:hover {
+    width: 100%;
+    height: 100%;
+  }
+`;
+
+export const Romb = styled.div`
+  height: 44px;
+  width: 44px;
+  margin: 0 auto 20px;
+  padding-top: 4px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 23px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  &::before {
+    transform: ${(props) => (props.rotated ? "rotate(0deg)" : "rotate(45deg)")};
+    content: "";
+    height: 100%;
+    width: 100%;
+    border-radius: ${(props) => (props.round ? "50%" : "6px")};
+    background-color: #fff6;
+    box-shadow: 0 2px 40px #00000040;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+`;
+
+export const BackCardTitle = styled.h4`
+  font-size: 16px;
+  line-height: 20px;
+  margin-bottom: 10px;
+`;
+
+export const BackCardParagraph = styled.p`
+  font-size: 10px;
+  line-height: 14px;
+  margin-bottom: 10px;
 `;
 
 export const HistoryZone = styled.div`
@@ -117,6 +190,7 @@ export const Period = styled.span`
 export const TotalPercent = styled.h4`
   font-size: 26px;
   line-height: 33px;
+  font-weight: 400;
   color: #5eaf61;
   margin-bottom: 4px;
 `;

@@ -1,3 +1,4 @@
+import { useCallback, useRef } from "react";
 import styled from "styled-components";
 import background from "../../assets/video-bg.svg";
 import videoOverlay from "../../assets/video-overlay.svg";
@@ -32,20 +33,45 @@ const Video = styled.a`
   border-radius: 8px;
   background: url(${videoOverlay}) no-repeat center;
   background-size: contain;
-  z-index: 1;
   opacity: 0.95;
   width: 100%;
   height: 350px;
 `;
 
 const VideoSection = () => {
-  return (
-    <StackedSection>
-      <VideoTitle>How Stacked Works</VideoTitle>
-      <Img src={background} alt="Video-bg" />
-      <Video />
-    </StackedSection>
-  );
+  const ref = useRef();
+
+  const listener = useCallback(() => {
+    const y = window.scrollY;
+    const element = ref.current;
+    if (y > 1200 && y < 1300) {
+      element.style.transform = "scale(1.3)";
+      element.style.opacity = "0";
+      element.style.transition = "all 0.25s linear";
+    } else if (y <= 1200 && y > 800) {
+      element.style.transform = "scale(1)";
+      element.style.opacity = "1";
+      element.style.transition = "all 0.25s linear";
+    } else if (y > 1400) {
+      window.removeEventListener("scroll", listener);
+    } else if (y < 1300 && y > 800) {
+      window.addEventListener("scroll", listener);
+    }
+  }, []);
+
+  window.addEventListener("scroll", listener);
+
+  const View = () => {
+    return (
+      <StackedSection ref={ref}>
+        <VideoTitle>How Stacked Works</VideoTitle>
+        <Img src={background} alt="Video-bg" />
+        <Video />
+      </StackedSection>
+    );
+  };
+
+  return <View />;
 };
 
 export default VideoSection;

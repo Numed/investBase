@@ -25,6 +25,9 @@ import {
   CircleRobin,
   TotalPercent,
   CircleProtos,
+  Romb,
+  BackCardParagraph,
+  BackCardTitle,
   CircleLargeCap,
   More,
 } from "../preBuild/styles";
@@ -52,16 +55,15 @@ const CardList = () => {
             <More>+3</More>
           </Icons>
         </FrontCard>
-        <BackCard>
-          <div className="circle">SBF</div>
-          <h4>SBF Basket</h4>
-          <p>
-            The SBF Basket is modeled after an idea by @IDrawCharts on Twitter
-            for a Sam Bankman-Fried index. These four tokens have been
-            publically supported by Sam but this basket is not otherwise
-            endorsed or supported by Sam Bankman-Fried or FTX and should not be
-            considered investment advice.
-          </p>
+        <BackCard brown>
+          <Romb>PT</Romb>
+          <BackCardTitle>The Protos Trend</BackCardTitle>
+          <BackCardParagraph>
+            The Protos Trend Index is based on a trend-following strategy. This
+            Stack is updated every week by Protos Management to stay on top of
+            all the newest trends and remain active in the market or reduce risk
+            when necessary.
+          </BackCardParagraph>
         </BackCard>
       </Card>
       <Card>
@@ -81,16 +83,16 @@ const CardList = () => {
             <img src={sushi} alt="Sushi" />
           </Icons>
         </FrontCard>
-        <BackCard>
-          <div className="circle">SBF</div>
-          <h4>SBF Basket</h4>
-          <p>
+        <BackCard lightBlue>
+          <Romb round>SBF</Romb>
+          <BackCardTitle>SBF Basket</BackCardTitle>
+          <BackCardParagraph>
             The SBF Basket is modeled after an idea by @IDrawCharts on Twitter
             for a Sam Bankman-Fried index. These four tokens have been
             publically supported by Sam but this basket is not otherwise
             endorsed or supported by Sam Bankman-Fried or FTX and should not be
             considered investment advice.
-          </p>
+          </BackCardParagraph>
         </BackCard>
       </Card>
       <Card>
@@ -112,16 +114,15 @@ const CardList = () => {
             <img src={usdt} alt="USD Tether" />
           </Icons>
         </FrontCard>
-        <BackCard>
-          <div className="circle">SBF</div>
-          <h4>SBF Basket</h4>
-          <p>
-            The SBF Basket is modeled after an idea by @IDrawCharts on Twitter
-            for a Sam Bankman-Fried index. These four tokens have been
-            publically supported by Sam but this basket is not otherwise
-            endorsed or supported by Sam Bankman-Fried or FTX and should not be
-            considered investment advice.
-          </p>
+        <BackCard green>
+          <Romb rotated>RH</Romb>
+          <BackCardTitle>Robinhood 6</BackCardTitle>
+          <BackCardParagraph>
+            Robinhood 6 tracks the total return of the 6 cryptoassets offered on
+            the popular Robinhood app, that are also listed on Binance, weighted
+            my market capitalization. Robinhood is one of the world’s most
+            popular retail investment platforms.
+          </BackCardParagraph>
         </BackCard>
       </Card>
       <Card>
@@ -144,16 +145,14 @@ const CardList = () => {
             <More>+3</More>
           </Icons>
         </FrontCard>
-        <BackCard>
-          <div className="circle">SBF</div>
-          <h4>SBF Basket</h4>
-          <p>
-            The SBF Basket is modeled after an idea by @IDrawCharts on Twitter
-            for a Sam Bankman-Fried index. These four tokens have been
-            publically supported by Sam but this basket is not otherwise
-            endorsed or supported by Sam Bankman-Fried or FTX and should not be
-            considered investment advice.
-          </p>
+        <BackCard blue>
+          <Romb>LC</Romb>
+          <BackCardTitle>Large Cap 10</BackCardTitle>
+          <BackCardParagraph>
+            Large Cap 10 tracks the total return of 10 of the largest
+            cryptoassets, as measured and weighted by free-float and 5-year
+            inflation-adjusted market capitalization.
+          </BackCardParagraph>
         </BackCard>
       </Card>
     </>
