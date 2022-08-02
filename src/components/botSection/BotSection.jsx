@@ -43,7 +43,7 @@ const CardContainer = styled(Card)`
   transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
   cursor: default;
 
-  &:hover {
+  &.active {
     transform: scale(0.9);
   }
 `;
@@ -68,6 +68,15 @@ const History = styled(HistoryZone)`
   position: unset;
 `;
 
+const CardInner = styled.div`
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  align-items: center;
+`;
+
 const Avatar = styled.div`
   display: block;
   width: 25px;
@@ -82,6 +91,33 @@ const Avatar = styled.div`
 `;
 
 const BotSection = () => {
+  const onActive = (e) => {
+    e.classList.add("active");
+    activeStyles();
+  };
+
+  const activeStyles = () => {
+    const cards = document.querySelectorAll(".sc-lbOyJj");
+    const activeCard = document.querySelector(".active");
+    for (const card of cards) {
+      if (!card.classList.contains("active")) {
+        card.style.transform = "scale(0.8)";
+      } else {
+        activeCard.style.transform = "scale(0.9)";
+      }
+    }
+  };
+
+  const onDeactive = (e) => {
+    const cards = document.querySelectorAll(".sc-lbOyJj");
+    e.classList.remove("active");
+    for (const card of cards) {
+      if (!card.classList.contains("active")) {
+        card.style.transform = "scale(1)";
+      }
+    }
+  };
+
   return (
     <Section>
       <SectionInner>
@@ -102,77 +138,97 @@ const BotSection = () => {
         </TextSection>
         <CardSection>
           <Cards>
-            <CardContainer>
-              <CardHeader>
-                <div className="price">
-                  <Price>From $250/mo</Price>
-                </div>
-                <History>
-                  <img src={history} alt="History Icon" />
-                  <span>12 month</span>
-                </History>
-              </CardHeader>
-              <Avatar>
-                <img src={psyho} alt="Psyho bot" />
-              </Avatar>
-              <CardTitle>Psycho Bot</CardTitle>
-              <img src={botChart} alt="Bot Char" />
-              <Period>Period PnL</Period>
-              <TotalPercent>1192.23%</TotalPercent>
+            <CardContainer
+              onMouseOver={(e) => onActive(e.target)}
+              onMouseOut={(e) => onDeactive(e.target)}
+            >
+              <CardInner>
+                <CardHeader>
+                  <div className="price">
+                    <Price>From $250/mo</Price>
+                  </div>
+                  <History>
+                    <img src={history} alt="History Icon" />
+                    <span>12 month</span>
+                  </History>
+                </CardHeader>
+                <Avatar>
+                  <img src={psyho} alt="Psyho bot" />
+                </Avatar>
+                <CardTitle>Psycho Bot</CardTitle>
+                <img src={botChart} alt="Bot Char" />
+                <Period>Period PnL</Period>
+                <TotalPercent>1192.23%</TotalPercent>
+              </CardInner>
             </CardContainer>
-            <CardContainer>
-              <CardHeader>
-                <div className="price">
-                  <Price>From $299/mo</Price>
-                </div>
-                <History>
-                  <img src={history} alt="History Icon" />
-                  <span>8 month</span>
-                </History>
-              </CardHeader>
-              <Avatar>
-                <img src={samurai} alt="Samurai Scalp" />
-              </Avatar>
-              <CardTitle>Samurai Scalp</CardTitle>
-              <img src={botChart} alt="Bot Char" />
-              <Period>Period PnL</Period>
-              <TotalPercent>198.52%</TotalPercent>
+            <CardContainer
+              onMouseOver={(e) => onActive(e.target)}
+              onMouseOut={(e) => onDeactive(e.target)}
+            >
+              <CardInner>
+                <CardHeader>
+                  <div className="price">
+                    <Price>From $299/mo</Price>
+                  </div>
+                  <History>
+                    <img src={history} alt="History Icon" />
+                    <span>8 month</span>
+                  </History>
+                </CardHeader>
+                <Avatar>
+                  <img src={samurai} alt="Samurai Scalp" />
+                </Avatar>
+                <CardTitle>Samurai Scalp</CardTitle>
+                <img src={botChart} alt="Bot Char" />
+                <Period>Period PnL</Period>
+                <TotalPercent>198.52%</TotalPercent>
+              </CardInner>
             </CardContainer>
-            <CardContainer>
-              <CardHeader>
-                <div className="price">
-                  <Price>From $300/mo</Price>
-                </div>
-                <History>
-                  <img src={history} alt="History Icon" />
-                  <span>2 month</span>
-                </History>
-              </CardHeader>
-              <Avatar>
-                <img src={swCapital} alt="SW Capital Bot" />
-              </Avatar>
-              <CardTitle>SW Capital Bot</CardTitle>
-              <img src={botChart} alt="Bot Char" />
-              <Period>Period PnL</Period>
-              <TotalPercent>547.53%</TotalPercent>
+            <CardContainer
+              onMouseOver={(e) => onActive(e.target)}
+              onMouseOut={(e) => onDeactive(e.target)}
+            >
+              <CardInner>
+                <CardHeader>
+                  <div className="price">
+                    <Price>From $300/mo</Price>
+                  </div>
+                  <History>
+                    <img src={history} alt="History Icon" />
+                    <span>2 month</span>
+                  </History>
+                </CardHeader>
+                <Avatar>
+                  <img src={swCapital} alt="SW Capital Bot" />
+                </Avatar>
+                <CardTitle>SW Capital Bot</CardTitle>
+                <img src={botChart} alt="Bot Char" />
+                <Period>Period PnL</Period>
+                <TotalPercent>547.53%</TotalPercent>
+              </CardInner>
             </CardContainer>
-            <CardContainer>
-              <CardHeader>
-                <div className="price">
-                  <Price>From $800/mo</Price>
-                </div>
-                <History>
-                  <img src={history} alt="History Icon" />
-                  <span>6 month</span>
-                </History>
-              </CardHeader>
-              <Avatar>
-                <img src={horse} alt="Trend king" />
-              </Avatar>
-              <CardTitle>Trend King</CardTitle>
-              <img src={botChart} alt="Bot Char" />
-              <Period>Period PnL</Period>
-              <TotalPercent>1169.39%</TotalPercent>
+            <CardContainer
+              onMouseOver={(e) => onActive(e.target)}
+              onMouseOut={(e) => onDeactive(e.target)}
+            >
+              <CardInner>
+                <CardHeader>
+                  <div className="price">
+                    <Price>From $800/mo</Price>
+                  </div>
+                  <History>
+                    <img src={history} alt="History Icon" />
+                    <span>6 month</span>
+                  </History>
+                </CardHeader>
+                <Avatar>
+                  <img src={horse} alt="Trend king" />
+                </Avatar>
+                <CardTitle>Trend King</CardTitle>
+                <img src={botChart} alt="Bot Char" />
+                <Period>Period PnL</Period>
+                <TotalPercent>1169.39%</TotalPercent>
+              </CardInner>
             </CardContainer>
           </Cards>
         </CardSection>

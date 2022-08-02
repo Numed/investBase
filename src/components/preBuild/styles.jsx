@@ -51,6 +51,27 @@ export const Cards = styled.div`
   gap: 30px 0;
 `;
 
+export const FrontCard = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  padding: 40px 25px 20px;
+  height: 100%;
+  transform: rotateY(0);
+  pointer-events: none;
+`;
+
+export const FrontInner = styled.div`
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-beetween;
+  flex-direction: column;
+  height: 100%;
+`;
+
 export const Card = styled.div`
   width: 80%;
   height: 100%;
@@ -59,32 +80,20 @@ export const Card = styled.div`
   filter: drop-shadow(2px 1px 7px rgba(0, 0, 0, 0.25));
   position: relative;
   border-radius: 7px;
-`;
-
-export const FrontCard = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  width: 100%;
-  z-index: 2;
-  padding: 40px 25px 20px;
-  height: 100%;
   backface-visibility: hidden;
-  transform: rotateY(0);
-  transition: -webkit-transform 1s ease-in-out;
-  transition: transform 1s ease-in-out;
+  z-index: 2;
 
-  &:hover {
+  &.active {
     transform: rotateY(180deg);
-    z-index: -1;
-    display: none;
     transition: transform 1s ease-in-out, -webkit-transform 1s ease-in-out;
     transform-style: preserve-3d;
   }
 
-  &:hover + .sc-ckMVTt {
+  &.active > .sc-fbPSWO {
     display: block;
+    position: absolute;
+    top: 0;
+    transform: rotateY(180deg);
     z-index: 2;
   }
 `;
@@ -106,12 +115,16 @@ export const BackCard = styled.div`
   height: 100%;
   color: #fff;
   border-radius: 7px;
-  backface-visibility: hidden;
   padding: 40px 25px 20px;
-  &:hover {
-    width: 100%;
-    height: 100%;
-  }
+`;
+
+export const BackInner = styled.div`
+  pointer-events: none;
+  display: flex;
+  height: 100%;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-beetwen;
 `;
 
 export const Romb = styled.div`
