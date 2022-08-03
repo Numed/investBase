@@ -48,58 +48,52 @@ export const Cards = styled.div`
   align-items: center;
   justify-content: space-evenly;
   grid-template-columns: repeat(2, 1fr);
-  gap: 30px 0;
+  gap: 50px 0;
+`;
+
+export const Card = styled.div`
+  width: 80%;
+  height: 350px;
+  perspective: 1000px;
+  color: #222;
+  border-radius: 7px;
+  filter: drop-shadow(2px 1px 7px rgba(0, 0, 0, 0.25));
+
+  &:hover .cardInner {
+    transform: rotateY(180deg);
+    transition: transform 3s ease-in-out, -webkit-transform 1s ease-in-out;
+  }
+`;
+
+export const CardInner = styled.div`
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
 `;
 
 export const FrontCard = styled.div`
+  position: absolute;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   width: 100%;
-  padding: 40px 25px 20px;
   height: 100%;
-  transform: rotateY(0);
-  pointer-events: none;
-`;
-
-export const FrontInner = styled.div`
-  pointer-events: none;
-  display: flex;
-  align-items: center;
-  justify-content: space-beetween;
-  flex-direction: column;
-  height: 100%;
-`;
-
-export const Card = styled.div`
-  width: 80%;
-  height: 100%;
-  background: #fff;
-  color: #222;
-  filter: drop-shadow(2px 1px 7px rgba(0, 0, 0, 0.25));
-  position: relative;
-  border-radius: 7px;
   backface-visibility: hidden;
-  z-index: 2;
-
-  &.active {
-    transform: rotateY(180deg);
-    transition: transform 1s ease-in-out, -webkit-transform 1s ease-in-out;
-    transform-style: preserve-3d;
-  }
-
-  &.active > .sc-fbPSWO {
-    display: block;
-    position: absolute;
-    top: 0;
-    transform: rotateY(180deg);
-    z-index: 2;
-  }
+  padding: 40px 25px 20px;
+  border-radius: 7px;
+  background: #fff;
 `;
 
 export const BackCard = styled.div`
-  display: none;
+  display: block;
+  position: absolute;
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+  width: 100%;
+  height: 100%;
   background: ${(props) => {
     if (props.brown) {
       return "#d5a11d";
@@ -112,19 +106,9 @@ export const BackCard = styled.div`
     }
   }};
   text-align: center;
-  height: 100%;
   color: #fff;
   border-radius: 7px;
   padding: 40px 25px 20px;
-`;
-
-export const BackInner = styled.div`
-  pointer-events: none;
-  display: flex;
-  height: 100%;
-  align-items: center;
-  flex-direction: column;
-  justify-content: space-beetwen;
 `;
 
 export const Romb = styled.div`

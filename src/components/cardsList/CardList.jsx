@@ -26,33 +26,19 @@ import {
   TotalPercent,
   CircleProtos,
   Romb,
+  CardInner,
   BackCardParagraph,
   BackCardTitle,
   CircleLargeCap,
-  FrontInner,
-  BackInner,
   More,
 } from "../preBuild/styles";
 
 const CardList = () => {
-  const onActive = (e) => {
-    console.log("Enter", e);
-    e.classList.add("active");
-  };
-
-  const onDeactive = (e) => {
-    console.log("Exit", e);
-    e.classList.remove("active");
-  };
-
   return (
     <>
-      <Card
-        onMouseEnter={(e) => onActive(e.target)}
-        onMouseOut={(e) => onDeactive(e.target)}
-      >
-        <FrontCard>
-          <FrontInner>
+      <Card>
+        <CardInner className="cardInner">
+          <FrontCard>
             <HistoryZone>
               <img src={history} alt="History Icon" />
               <span>Monthly</span>
@@ -70,10 +56,8 @@ const CardList = () => {
               <img src={link} alt="Chainlink" />
               <More>+3</More>
             </Icons>
-          </FrontInner>
-        </FrontCard>
-        <BackCard brown>
-          <BackInner>
+          </FrontCard>
+          <BackCard brown>
             <Romb>PT</Romb>
             <BackCardTitle>The Protos Trend</BackCardTitle>
             <BackCardParagraph>
@@ -82,15 +66,12 @@ const CardList = () => {
               top of all the newest trends and remain active in the market or
               reduce risk when necessary.
             </BackCardParagraph>
-          </BackInner>
-        </BackCard>
+          </BackCard>
+        </CardInner>
       </Card>
       <Card>
-        <FrontCard
-          onMouseEnter={(e) => onActive(e.target)}
-          onMouseOut={(e) => onDeactive(e.target)}
-        >
-          <FrontInner>
+        <CardInner className="cardInner">
+          <FrontCard>
             <HistoryZone>
               <img src={history} alt="History Icon" />
               <span>Monthly</span>
@@ -105,10 +86,8 @@ const CardList = () => {
               <img src={srm} alt="SRM" />
               <img src={sushi} alt="Sushi" />
             </Icons>
-          </FrontInner>
-        </FrontCard>
-        <BackCard lightBlue>
-          <BackInner>
+          </FrontCard>
+          <BackCard lightBlue>
             <Romb round>SBF</Romb>
             <BackCardTitle>SBF Basket</BackCardTitle>
             <BackCardParagraph>
@@ -118,15 +97,12 @@ const CardList = () => {
               endorsed or supported by Sam Bankman-Fried or FTX and should not
               be considered investment advice.
             </BackCardParagraph>
-          </BackInner>
-        </BackCard>
+          </BackCard>
+        </CardInner>
       </Card>
       <Card>
-        <FrontCard
-          onMouseEnter={(e) => onActive(e.target)}
-          onMouseOut={(e) => onDeactive(e.target)}
-        >
-          <FrontInner>
+        <CardInner className="cardInner">
+          <FrontCard>
             <HistoryZone>
               <img src={history} alt="History Icon" />
               <span>Monthly</span>
@@ -143,10 +119,8 @@ const CardList = () => {
               <img src={ltc} alt="Litecoin" />
               <img src={usdt} alt="USD Tether" />
             </Icons>
-          </FrontInner>
-        </FrontCard>
-        <BackCard green>
-          <BackInner>
+          </FrontCard>
+          <BackCard green>
             <Romb rotated>RH</Romb>
             <BackCardTitle>Robinhood 6</BackCardTitle>
             <BackCardParagraph>
@@ -155,15 +129,12 @@ const CardList = () => {
               weighted my market capitalization. Robinhood is one of the world’s
               most popular retail investment platforms.
             </BackCardParagraph>
-          </BackInner>
-        </BackCard>
+          </BackCard>
+        </CardInner>
       </Card>
       <Card>
-        <FrontCard
-          onMouseEnter={(e) => onActive(e.target)}
-          onMouseOut={(e) => onDeactive(e.target)}
-        >
-          <FrontInner>
+        <CardInner className="cardInner">
+          <FrontCard>
             <HistoryZone>
               <img src={history} alt="History Icon" />
               <span>Monthly</span>
@@ -181,10 +152,8 @@ const CardList = () => {
               <img src={link} alt="Chainlink" />
               <More>+3</More>
             </Icons>
-          </FrontInner>
-        </FrontCard>
-        <BackCard blue>
-          <BackInner>
+          </FrontCard>
+          <BackCard blue>
             <Romb>LC</Romb>
             <BackCardTitle>Large Cap 10</BackCardTitle>
             <BackCardParagraph>
@@ -192,8 +161,8 @@ const CardList = () => {
               cryptoassets, as measured and weighted by free-float and 5-year
               inflation-adjusted market capitalization.
             </BackCardParagraph>
-          </BackInner>
-        </BackCard>
+          </BackCard>
+        </CardInner>
       </Card>
     </>
   );

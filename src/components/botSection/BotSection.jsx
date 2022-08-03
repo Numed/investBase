@@ -43,7 +43,7 @@ const CardContainer = styled(Card)`
   transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
   cursor: default;
 
-  &.active {
+  &.bot.active {
     transform: scale(0.9);
   }
 `;
@@ -97,7 +97,7 @@ const BotSection = () => {
   };
 
   const activeStyles = () => {
-    const cards = document.querySelectorAll(".sc-lbOyJj");
+    const cards = document.querySelectorAll(".sc-lbOyJj.bot");
     const activeCard = document.querySelector(".active");
     for (const card of cards) {
       if (!card.classList.contains("active")) {
@@ -109,7 +109,7 @@ const BotSection = () => {
   };
 
   const onDeactive = (e) => {
-    const cards = document.querySelectorAll(".sc-lbOyJj");
+    const cards = document.querySelectorAll(".sc-lbOyJj.bot");
     e.classList.remove("active");
     for (const card of cards) {
       if (!card.classList.contains("active")) {
@@ -141,6 +141,7 @@ const BotSection = () => {
             <CardContainer
               onMouseOver={(e) => onActive(e.target)}
               onMouseOut={(e) => onDeactive(e.target)}
+              className="bot"
             >
               <CardInner>
                 <CardHeader>
@@ -164,6 +165,7 @@ const BotSection = () => {
             <CardContainer
               onMouseOver={(e) => onActive(e.target)}
               onMouseOut={(e) => onDeactive(e.target)}
+              className="bot"
             >
               <CardInner>
                 <CardHeader>
@@ -187,6 +189,7 @@ const BotSection = () => {
             <CardContainer
               onMouseOver={(e) => onActive(e.target)}
               onMouseOut={(e) => onDeactive(e.target)}
+              className="bot"
             >
               <CardInner>
                 <CardHeader>
@@ -210,6 +213,7 @@ const BotSection = () => {
             <CardContainer
               onMouseOver={(e) => onActive(e.target)}
               onMouseOut={(e) => onDeactive(e.target)}
+              className="bot"
             >
               <CardInner>
                 <CardHeader>
