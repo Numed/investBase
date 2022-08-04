@@ -2,6 +2,7 @@ import { useCallback, useRef } from "react";
 import styled from "styled-components";
 import background from "../../assets/video-bg.svg";
 import videoOverlay from "../../assets/video-overlay.svg";
+import { UseHook } from "../../hooks/http.hook";
 
 const StackedSection = styled.section`
   width: 100%;
@@ -40,26 +41,26 @@ const Video = styled.a`
 
 const VideoSection = () => {
   const ref = useRef();
+  const { useOnScreen } = UseHook();
+  const onScreen = useOnScreen(ref, "-100px");
 
   const listener = useCallback(() => {
     const y = window.scrollY;
     const element = ref.current;
-    if (y > 1200 && y < 1300) {
+    if (y > 1280 && y < 1300) {
       element.style.transform = "scale(1.3)";
       element.style.opacity = "0";
       element.style.transition = "all 0.25s linear";
-    } else if (y <= 1200 && y > 800) {
+    } else if (y < 1280 && y > 1250) {
       element.style.transform = "scale(1)";
       element.style.opacity = "1";
       element.style.transition = "all 0.25s linear";
-    } else if (y > 1400) {
-      window.removeEventListener("scroll", listener);
-    } else if (y < 1300 && y > 800) {
-      window.addEventListener("scroll", listener);
     }
   }, []);
 
-  window.addEventListener("scroll", listener);
+  if (onScreen === true) {
+    window.addEventListener("scroll", listener);
+  }
 
   const View = () => {
     return (
