@@ -110,7 +110,7 @@ const Crypto = styled.div`
   img {
     transition: transform 0.2s, -webkit-transform 0.2s;
     display: block;
-    width: 100%;
+    width: 25px;
     margin-right: 9px;
 
     @media (max-width: 925px) {
