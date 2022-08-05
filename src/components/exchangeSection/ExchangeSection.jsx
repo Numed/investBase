@@ -19,6 +19,11 @@ const SectionExchange = styled.section`
   justify-content: space-around;
   align-items: center;
   height: 100vh;
+
+  @media (max-width: 925px) {
+    height: 100%;
+    padding-botton: 40px;
+  }
 `;
 
 const TextSection = styled.div`
@@ -26,6 +31,10 @@ const TextSection = styled.div`
   justify-content: center;
   align-items: center;
   width: 35%;
+
+  @media (max-width: 925px) {
+    width: 70%;
+  }
 `;
 
 const TextTitle = styled.h2`
@@ -33,12 +42,25 @@ const TextTitle = styled.h2`
   line-height: 110%;
   margin-bottom: 44px;
   color: #fff;
+
+  @media (max-width: 925px) {
+    font-size: 63px;
+    text-align: center;
+  }
+
+  @media (max-width: 780px) {
+    font-size: 48px;
+  }
 `;
 
 const CardSection = styled.div`
   width: 45%;
   height: 47%;
   position: relative;
+
+  @media (max-width: 925px) {
+    display: none;
+  }
 `;
 
 const Cards = styled.div`
@@ -74,6 +96,20 @@ const FirstGroup = styled.div`
     top: 0;
     left: 13%;
   }
+
+  @media (max-width: 1050px) {
+    .bybit {
+      left: -4%;
+    }
+
+    .coinbase {
+      left: 3%;
+    }
+
+    .kucoin {
+      left: 8%;
+    }
+  }
 `;
 
 const SecondGroup = styled.div`
@@ -98,6 +134,23 @@ const SecondGroup = styled.div`
   .binance-futures {
     top: 92%;
     left: 33%;
+  }
+
+  @media (max-width: 1050px) {
+    .binance {
+      top: 45%;
+      left: 36%;
+    }
+
+    .phemex {
+      top: -17%;
+      left: 30%;
+    }
+
+    .binance-futures {
+      top: 81%;
+      left: 20%;
+    }
   }
 `;
 
@@ -171,6 +224,42 @@ const ThirdGroup = styled.div`
     top: 91%;
     right: 6%;
   }
+
+  @media (max-width: 1200px) {
+    .bitmex {
+      right: calc(20px);
+    }
+
+    .aax {
+      right: calc(10px);
+    }
+
+    .voyager {
+      right: calc(-20px);
+    }
+
+    .bitfinex {
+      right: 0;
+    }
+  }
+
+  @media (max-width: 1050px) {
+    .bitmex {
+      right: calc(20px);
+    }
+
+    .aax {
+      right: calc(-40px);
+    }
+
+    .voyager {
+      right: calc(-20px);
+    }
+
+    .bitfinex {
+      right: 0;
+    }
+  }
 `;
 
 const Card = styled.div`
@@ -188,9 +277,17 @@ const Card = styled.div`
 
   &:hover {
     transform: scale(1.1);
+    @media (max-width: 1200px) {
+      transform: scale(1.05);
+    }
   }
 
   &.small {
+    height: 50px;
+    width: 130px;
+  }
+
+  @media (max-width: 1300px) {
     height: 50px;
     width: 130px;
   }

@@ -23,6 +23,10 @@ const Section = styled.section`
   -webkit-box-shadow: 0px 40px 30px rgb(24 24 55 / 35%);
   box-shadow: 0 40px 30px #18183759;
   border-radius: 12px;
+
+  @media (max-width: 925px) {
+    width: 95%;
+  }
 `;
 
 const SectionInner = styled.div`
@@ -39,6 +43,11 @@ const TextSection = styled.div`
   align-items: flex-start;
   justify-content: center;
   flex-direction: column;
+
+  @media (max-width: 780px) {
+    width: 50%;
+    margin-left: 50px;
+  }
 `;
 
 const TextTitle = styled.h2`
@@ -100,6 +109,14 @@ const ImgSection = styled.div`
   min-height: 570px;
   background: url(${banner}) no-repeat 30px center;
   background-size: contain;
+
+  @media (max-width: 925px) {
+    width: 55%;
+  }
+
+  @media (max-width: 780px) {
+    width: 70%;
+  }
 `;
 
 const FooterBanner = () => {

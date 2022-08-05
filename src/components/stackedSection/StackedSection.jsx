@@ -30,7 +30,6 @@ const SectionContainer = styled.section`
   border-radius: 8px;
   padding: 150px 0 80px;
   position: relative;
-  z-index: 0;
 
   &::after {
     content: "";
@@ -48,6 +47,10 @@ const SectionInner = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
+
+  @media (max-width: 925px) {
+    flex-wrap: wrap;
+  }
 `;
 
 const Cards = styled.div`
@@ -172,6 +175,11 @@ const TextSection = styled.div`
   align-items: flex-start;
   justify-content: center;
   flex-direction: column;
+
+  @media (max-width: 925px) {
+    width: 50%;
+    margin-top: 100px;
+  }
 `;
 
 const TextSubtitle = styled.h3`
@@ -180,6 +188,10 @@ const TextSubtitle = styled.h3`
   font-size: 22px;
   line-height: 28px;
   margin-bottom: 25px;
+
+  @media (max-width: 925px) {
+    font-size: 20px;
+  }
 `;
 
 const TextTitle = styled.h2`
@@ -192,12 +204,20 @@ const TextTitle = styled.h2`
   span {
     font-weight: 700;
   }
+
+  @media (max-width: 925px) {
+    font-size: 42px;
+  }
 `;
 
 const TextParagraph = styled.p`
 font-size: 26px;
     line-height: 33px;
     color: #fff;
+
+    @media (max-width: 925px) {
+        font-size: 24px;
+      }
 }
 `;
 

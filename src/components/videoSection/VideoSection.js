@@ -26,6 +26,10 @@ const Img = styled.img`
   transform: translate(-50%, -50%);
   pointer-events: none;
   user-select: none;
+
+  @media (max-width: 925px) {
+    z-index: -2;
+  }
 `;
 
 const Video = styled.a`
@@ -37,6 +41,10 @@ const Video = styled.a`
   opacity: 0.95;
   width: 100%;
   height: 350px;
+
+  @media (max-width: 925px) {
+    opacity: 1;
+  }
 `;
 
 const VideoSection = () => {

@@ -139,6 +139,10 @@ const App = styled.div`
     line-height: 15px;
     color: #ffffff80;
   }
+
+  @media (max-width: 780px) {
+    margin-left: 60px;
+  }
 `;
 
 const AppChose = styled.div`

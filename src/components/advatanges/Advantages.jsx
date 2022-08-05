@@ -17,6 +17,11 @@ const AdvantagesContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 100%;
+
+  @media (max-width: 780px) {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 `;
 
 const Advantage = styled.div`
@@ -26,6 +31,12 @@ const Advantage = styled.div`
 
   img {
     margin: 0 25px 0 0;
+  }
+
+  @media (max-width: 780px) {
+    &:not(:first-child) {
+      margin-top: 65px;
+    }
   }
 `;
 

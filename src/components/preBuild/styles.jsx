@@ -25,6 +25,14 @@ export const SectionTitle = styled.h2`
   span {
     font-weight: 700;
   }
+
+  @media (max-width: 925px) {
+    font-size: 64px;
+  }
+
+  @media (max-width: 780px) {
+    font-size: 54px;
+  }
 `;
 
 export const SectionInner = styled.div`
@@ -32,6 +40,10 @@ export const SectionInner = styled.div`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+
+  @media (max-width: 780px) {
+    flex-wrap: wrap;
+  }
 `;
 
 export const CardSection = styled.div`
@@ -39,6 +51,10 @@ export const CardSection = styled.div`
   align-items: center;
   justify-content: center;
   width: 50%;
+
+  @media (max-width: 780px) {
+    width: 70%;
+  }
 `;
 
 export const Cards = styled.div`
@@ -49,6 +65,10 @@ export const Cards = styled.div`
   justify-content: space-evenly;
   grid-template-columns: repeat(2, 1fr);
   gap: 50px 0;
+
+  @media (max-width: 925px) {
+    gap: 50px;
+  }
 `;
 
 export const Card = styled.div`
@@ -62,6 +82,16 @@ export const Card = styled.div`
   &:hover .cardInner {
     transform: rotateY(180deg);
     transition: transform 3s ease-in-out, -webkit-transform 1s ease-in-out;
+  }
+
+  @media (max-width: 925px) {
+    width: 100%;
+    height: 0;
+    min-height: 400px;
+  }
+
+  @media (max-width: 780px) {
+    min-height: 370px;
   }
 `;
 
@@ -199,6 +229,13 @@ export const Icons = styled.div`
   img:not(:first-child) {
     margin-left: 5px;
   }
+
+  @media (max-width: 925px) {
+    flex-wrap: wrap;
+    img {
+      margin: 5px;
+    }
+  }
 `;
 
 export const Circle = styled.div`
@@ -247,6 +284,11 @@ export const TextSection = styled.div`
   justify-content: center;
   flex-direction: column;
   width: 33%;
+
+  @media (max-width: 780px) {
+    width: 70%;
+    margin-top: 60px;
+  }
 `;
 
 export const TextTitle = styled.h3`

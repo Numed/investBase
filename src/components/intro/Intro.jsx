@@ -12,12 +12,24 @@ const Section = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0 25px;
+
+  @media (max-width: 780px) {
+    flex-wrap: wrap;
+  }
 `;
 
 const TextSection = styled.div`
   display: flex;
   flex-direction: column;
   max-width: 33.3%;
+
+  @media (max-width: 780px) {
+    max-width: 100%;
+    text-align: center;
+    align-items: center;
+    margin-bottom: 40px;
+  }
 `;
 
 const TextSectionTitle = styled.h2`
@@ -37,6 +49,14 @@ const TextSectionTitle = styled.h2`
     background-clip: text;
     -webkit-text-fill-color: transparent;
   }
+
+  @media (max-width: 925px) {
+    font-size: 42px;
+  }
+
+  @media (max-width: 780px) {
+    font-size: 36px;
+  }
 `;
 
 const TextSectionSubtitle = styled.p`
@@ -44,6 +64,10 @@ const TextSectionSubtitle = styled.p`
   font-size: 22px;
   line-height: 28px;
   margin-bottom: 36px;
+
+  @media (max-width: 925px) {
+    font-size: 20px;
+  }
 `;
 
 const GetStarted = styled.a`
@@ -97,6 +121,10 @@ const Card = styled.div`
     animation-duration: 5s;
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
+
+    @media (max-width: 925px) {
+      height: 65%;
+    }
   }
 
   &:nth-child(2) {

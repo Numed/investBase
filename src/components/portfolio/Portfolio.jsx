@@ -18,6 +18,10 @@ const Section = styled.section`
   display: flex;
   justify-content: space-around;
   align-items: center;
+
+  @media (max-width: 925px) {
+    padding: 100px 25px 0;
+  }
 `;
 
 const TextSection = styled.div`
@@ -25,6 +29,10 @@ const TextSection = styled.div`
   display: flex;
   align-items: flex-start;
   flex-direction: column;
+
+  @media (max-width: 850px) {
+    width: 50%;
+  }
 `;
 
 const TextTitle = styled.h2`
@@ -41,6 +49,10 @@ const TextTitle = styled.h2`
     background-clip: text;
     -webkit-text-fill-color: transparent;
   }
+
+  @media (max-width: 850px) {
+    font-size: 42px;
+  }
 `;
 
 const TextParagraph = styled.p`
@@ -48,6 +60,10 @@ const TextParagraph = styled.p`
   line-height: 33px;
   color: #2f3158;
   margin-bottom: 59px;
+
+  @media (max-width: 850px) {
+    font-size: 23px;
+  }
 `;
 
 const Ul = styled.ul`
@@ -62,6 +78,10 @@ const Ul = styled.ul`
       margin-bottom: 25px;
     }
   }
+
+  @media (max-width: 850px) {
+    margin-left: 20px;
+  }
 `;
 
 const Circle = styled.div`
@@ -74,6 +94,11 @@ const Circle = styled.div`
   align-items: center;
   flex-direction: column;
   filter: drop-shadow(10px 32.36px 30.0124px rgba(39, 39, 95, 0.4));
+
+  @media (max-width: 850px) {
+    width: 380px;
+    height: 380px;
+  }
 `;
 
 const Crypto = styled.div`
@@ -87,6 +112,10 @@ const Crypto = styled.div`
     display: block;
     width: 100%;
     margin-right: 9px;
+
+    @media (max-width: 925px) {
+      width: 20px;
+    }
   }
 
   label {
@@ -133,7 +162,8 @@ const Input = styled.input`
   outline: none;
   transition: 0.3s;
 
-  &::-webkit-slider-thumb {
+  &::-webkit-slider-thumb,
+  &::-moz-slider-thumb {
     content: "";
     height: 20px;
     width: 15px;
@@ -144,7 +174,8 @@ const Input = styled.input`
   }
 
   &:hover,
-  &::-webkit-slider-thumb:hover {
+  &::-webkit-slider-thumb:hover,
+  &::-moz-slider-thumb:hover {
     background: #4a4ae2;
     filter: drop-shadow(0px 0px 20px #4a4ae2);
   }
@@ -178,6 +209,11 @@ const LineChart = styled.div`
   }
 `;
 
+const CryptoInner = styled.div`
+  width: 80%;
+  height: 60%;
+`;
+
 const Portfolio = () => {
   const [USDTheter, setUsdt] = useState(20);
   const [Bitcoin, setBtc] = useState(8);
@@ -204,90 +240,92 @@ const Portfolio = () => {
           </Ul>
         </TextSection>
         <Circle>
-          <Crypto>
-            <img src={usdt} alt="USD Tether" />
-            <label htmlFor="usdt">USDT</label>
-            <Input
-              type="range"
-              id="usdt"
-              min="0"
-              max="100"
-              value={USDTheter}
-              onChange={(e) => setUsdt(e.target.value)}
-              step="1"
-            />
-            <span>{USDTheter} %</span>
-          </Crypto>
-          <Crypto>
-            <img src={btc} alt="Bitcoin" />
-            <label htmlFor="btc">BTC</label>
-            <Input
-              type="range"
-              id="btc"
-              min="0"
-              max="100"
-              value={Bitcoin}
-              onChange={(e) => setBtc(e.target.value)}
-              step="1"
-            />
-            <span>{Bitcoin} %</span>
-          </Crypto>
-          <Crypto>
-            <img src={eth} alt="Ethurium" />
-            <label htmlFor="eth">ETH</label>
-            <Input
-              type="range"
-              id="eth"
-              min="0"
-              max="100"
-              value={Ethurium}
-              onChange={(e) => setEth(e.target.value)}
-              step="1"
-            />
-            <span>{Ethurium} %</span>
-          </Crypto>
-          <Crypto>
-            <img src={link} alt="Link" />
-            <label htmlFor="link">LINK</label>
-            <Input
-              type="range"
-              id="link"
-              min="0"
-              max="100"
-              value={Link}
-              onChange={(e) => setLink(e.target.value)}
-              step="1"
-            />
-            <span>{Link} %</span>
-          </Crypto>
-          <Crypto>
-            <img src={uni} alt="DAI" />
-            <label htmlFor="dai">DAI</label>
-            <Input
-              type="range"
-              id="dai"
-              min="0"
-              max="100"
-              value={Dai}
-              onChange={(e) => setDai(e.target.value)}
-              step="1"
-            />
-            <span>{Dai} %</span>
-          </Crypto>
-          <Crypto>
-            <img src={doge} alt="Doge Coin" />
-            <label htmlFor="doge">DOGE</label>
-            <Input
-              type="range"
-              id="doge"
-              min="0"
-              max="100"
-              value={Doge}
-              onChange={(e) => setDoge(e.target.value)}
-              step="1"
-            />
-            <span>{Doge} %</span>
-          </Crypto>
+          <CryptoInner>
+            <Crypto>
+              <img src={usdt} alt="USD Tether" />
+              <label htmlFor="usdt">USDT</label>
+              <Input
+                type="range"
+                id="usdt"
+                min="0"
+                max="100"
+                value={USDTheter}
+                onChange={(e) => setUsdt(e.target.value)}
+                step="1"
+              />
+              <span>{USDTheter} %</span>
+            </Crypto>
+            <Crypto>
+              <img src={btc} alt="Bitcoin" />
+              <label htmlFor="btc">BTC</label>
+              <Input
+                type="range"
+                id="btc"
+                min="0"
+                max="100"
+                value={Bitcoin}
+                onChange={(e) => setBtc(e.target.value)}
+                step="1"
+              />
+              <span>{Bitcoin} %</span>
+            </Crypto>
+            <Crypto>
+              <img src={eth} alt="Ethurium" />
+              <label htmlFor="eth">ETH</label>
+              <Input
+                type="range"
+                id="eth"
+                min="0"
+                max="100"
+                value={Ethurium}
+                onChange={(e) => setEth(e.target.value)}
+                step="1"
+              />
+              <span>{Ethurium} %</span>
+            </Crypto>
+            <Crypto>
+              <img src={link} alt="Link" />
+              <label htmlFor="link">LINK</label>
+              <Input
+                type="range"
+                id="link"
+                min="0"
+                max="100"
+                value={Link}
+                onChange={(e) => setLink(e.target.value)}
+                step="1"
+              />
+              <span>{Link} %</span>
+            </Crypto>
+            <Crypto>
+              <img src={uni} alt="DAI" />
+              <label htmlFor="dai">DAI</label>
+              <Input
+                type="range"
+                id="dai"
+                min="0"
+                max="100"
+                value={Dai}
+                onChange={(e) => setDai(e.target.value)}
+                step="1"
+              />
+              <span>{Dai} %</span>
+            </Crypto>
+            <Crypto>
+              <img src={doge} alt="Doge Coin" />
+              <label htmlFor="doge">DOGE</label>
+              <Input
+                type="range"
+                id="doge"
+                min="0"
+                max="100"
+                value={Doge}
+                onChange={(e) => setDoge(e.target.value)}
+                step="1"
+              />
+              <span>{Doge} %</span>
+            </Crypto>
+          </CryptoInner>
         </Circle>
       </Section>
       <LineChart />

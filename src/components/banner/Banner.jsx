@@ -25,6 +25,14 @@ const BannerTitle = styled.h2`
   letter-spacing: -0.02em;
   font-weight: 400;
   margin-bottom: 18px;
+
+  @media (max-width: 925px) {
+    font-size: 64px;
+  }
+
+  @media (max-width: 780px) {
+    font-size: 46px;
+  }
 `;
 
 const BannerSubtitle = styled.h3`
@@ -42,6 +50,10 @@ const Statiscics = styled.div`
   align-items: center;
   padding-top: 100px;
   width: 80%;
+
+  @media (max-width: 780px) {
+    width: 100%;
+  }
 `;
 
 const BannerItem = styled.div`
@@ -58,12 +70,22 @@ const BannerItem = styled.div`
     line-height: 120%;
     letter-spacing: -0.02em;
     margin-bottom: 32px;
+
+    @media (max-width: 925px) {
+      font-size: 42px;
+    }
   }
 
   h5 {
     font-weight: 400;
     font-size: 22px;
     line-height: 28px;
+  }
+
+  @media (max-width: 780px) {
+    min-width: 33.3%;
+    width: 0;
+    height: 100%;
   }
 `;
 

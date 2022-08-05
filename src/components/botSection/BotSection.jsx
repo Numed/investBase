@@ -46,6 +46,11 @@ const CardContainer = styled(Card)`
   &.bot.active {
     transform: scale(0.9);
   }
+
+  @media (max-width: 925px) {
+    width: 90%;
+    min-height: 70%;
+  }
 `;
 
 const CardHeader = styled.div`
@@ -97,7 +102,7 @@ const BotSection = () => {
   };
 
   const activeStyles = () => {
-    const cards = document.querySelectorAll(".sc-lbOyJj.bot");
+    const cards = document.querySelectorAll(".bot");
     const activeCard = document.querySelector(".active");
     for (const card of cards) {
       if (!card.classList.contains("active")) {
@@ -109,7 +114,7 @@ const BotSection = () => {
   };
 
   const onDeactive = (e) => {
-    const cards = document.querySelectorAll(".sc-lbOyJj.bot");
+    const cards = document.querySelectorAll(".bot");
     e.classList.remove("active");
     for (const card of cards) {
       if (!card.classList.contains("active")) {
