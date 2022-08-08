@@ -22,6 +22,11 @@ const Section = styled.section`
   @media (max-width: 925px) {
     padding: 100px 25px 0;
   }
+
+  @media (max-width: 580px) {
+    padding: 50px 25px 0;
+    flex-wrap: wrap;
+  }
 `;
 
 const TextSection = styled.div`
@@ -32,6 +37,11 @@ const TextSection = styled.div`
 
   @media (max-width: 850px) {
     width: 50%;
+  }
+
+  @media (max-width: 580px) {
+    width: 90%;
+    margin-bottom: 40px;
   }
 `;
 
@@ -53,6 +63,11 @@ const TextTitle = styled.h2`
   @media (max-width: 850px) {
     font-size: 42px;
   }
+
+  @media (max-width: 580px) {
+    font-size: 36px;
+    text-align: center;
+  }
 `;
 
 const TextParagraph = styled.p`
@@ -63,6 +78,11 @@ const TextParagraph = styled.p`
 
   @media (max-width: 850px) {
     font-size: 23px;
+  }
+
+  @media (max-width: 580px) {
+    font-size: 22px;
+    margin-bottom: 30px;
   }
 `;
 
@@ -76,6 +96,9 @@ const Ul = styled.ul`
 
     &:not(:last-child) {
       margin-bottom: 25px;
+    }
+    @media (max-width: 580px) {
+      font-size: 18px;
     }
   }
 

@@ -14,7 +14,7 @@ const Section = styled.section`
   align-items: center;
   padding: 0 25px;
 
-  @media (max-width: 780px) {
+  @media (max-width: 850px) {
     flex-wrap: wrap;
   }
 `;
@@ -24,7 +24,7 @@ const TextSection = styled.div`
   flex-direction: column;
   max-width: 33.3%;
 
-  @media (max-width: 780px) {
+  @media (max-width: 850px) {
     max-width: 100%;
     text-align: center;
     align-items: center;
@@ -54,7 +54,7 @@ const TextSectionTitle = styled.h2`
     font-size: 42px;
   }
 
-  @media (max-width: 780px) {
+  @media (max-width: 850px) {
     font-size: 36px;
   }
 `;
@@ -97,6 +97,18 @@ const ImgSection = styled.div`
   width: 660px;
   height: 560px;
   padding-left: 100px;
+
+  @media (max-width: 680px) {
+    padding-left: 50px;
+  }
+
+  @media (max-width: 550px) {
+    padding-left: 0px;
+  }
+
+  @media (max-width: 480px) {
+    display: none;
+  }
 `;
 
 const Cards = styled.div`
@@ -192,6 +204,11 @@ const Circle = styled.div`
     background-repeat: no-repeat;
     background-position: 64px 174px;
     pointer-events: none;
+
+    @media (max-width: 580px) {
+      width: 100%;
+      left: 0px;
+    }
   }
 `;
 

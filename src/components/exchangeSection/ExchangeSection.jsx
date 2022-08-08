@@ -51,6 +51,10 @@ const TextTitle = styled.h2`
   @media (max-width: 780px) {
     font-size: 48px;
   }
+
+  @media (max-width: 480px) {
+    font-size: 34px;
+  }
 `;
 
 const CardSection = styled.div`

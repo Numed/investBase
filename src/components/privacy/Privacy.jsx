@@ -35,6 +35,10 @@ const BackedIcon = styled.div`
     font-size: 12px;
     line-height: 15px;
     color: #ffffff4d;
+
+    @media (max-width: 380px) {
+      margin: 0 auto;
+    }
   }
 
   img {

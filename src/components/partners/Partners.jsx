@@ -17,6 +17,20 @@ const PartnersContainer = styled.div`
     line-height: 18px;
     color: #2f3158;
   }
+
+  @media (max-width: 560px) {
+    padding: 90px 30px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (max-width: 380px) {
+    padding: 90px 15px;
+    grid-template-columns: repeat(2, 1fr);
+  }
 `;
 
 const Partners = () => {

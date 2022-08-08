@@ -41,6 +41,11 @@ const SectionContainer = styled.section`
     left: 0;
     z-index: -1;
   }
+
+  @media (max-width: 580px) {
+    padding: 80px 0;
+    width: 100%;
+  }
 `;
 
 const SectionInner = styled.div`
@@ -74,6 +79,19 @@ const MainCard = styled.div`
       font-weight: 700;
       color: #32c37d;
     }
+    @media (max-width: 580px) {
+      font-size: 44px;
+    }
+
+    @media (max-width: 480px) {
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 580px) {
+    width: 95%;
+    margin: 0 auto;
+    height: 100%;
   }
 `;
 
@@ -91,6 +109,15 @@ const CardExchange = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: 580px) {
+    width: 35%;
+    height: 50%;
+  }
+
+  @media (max-width: 480px) {
+    display: none;
+  }
 
   span {
     display: flex;
@@ -135,6 +162,15 @@ const CardsTotalContainer = styled.div`
     letter-spacing: -0.02em;
     color: #fff;
   }
+
+  @media (max-width: 580px) {
+    bottom: -120px;
+    left: 0;
+  }
+
+  @media (max-width: 480px) {
+    display: none;
+  }
 `;
 
 const TotalPortfolio = styled.div`
@@ -151,6 +187,16 @@ const TotalPortfolio = styled.div`
     color: #fff;
     border-radius: 8px;
     box-shadow: 0 22.36px 30.0124px #27275f30;
+
+    @media (max-width: 580px) {
+        width: 42%;
+        height: 33.3%;;
+        min-width: 0;
+      }
+
+      @media(max-width: 480px){
+        display: none;
+      }
 }
 `;
 
@@ -167,6 +213,16 @@ const TotalProfit = styled.div`
   color: #fff;
   border-radius: 8px;
   box-shadow: 0 22px 30px #27275f30;
+
+  @media (max-width: 580px) {
+    width: 42%;
+    height: 33.3%;
+    min-width: 0;
+  }
+
+  @media (max-width: 480px) {
+    display: none;
+  }
 `;
 
 const TextSection = styled.div`
@@ -179,6 +235,15 @@ const TextSection = styled.div`
   @media (max-width: 925px) {
     width: 50%;
     margin-top: 100px;
+  }
+
+  @media (max-width: 580px) {
+    width: 70%;
+    margin-top: 170px;
+  }
+
+  @media (max-width: 480px) {
+    margin-top: 60px;
   }
 `;
 
@@ -208,6 +273,10 @@ const TextTitle = styled.h2`
   @media (max-width: 925px) {
     font-size: 42px;
   }
+
+  @media (max-width: 480px) {
+    font-size: 28px;
+  }
 `;
 
 const TextParagraph = styled.p`
@@ -217,6 +286,10 @@ font-size: 26px;
 
     @media (max-width: 925px) {
         font-size: 24px;
+      }
+
+      @media(max-width: 480px){
+        font-size: 20px;
       }
 }
 `;

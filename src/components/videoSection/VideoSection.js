@@ -16,6 +16,10 @@ const VideoTitle = styled.h2`
   font-weight: 400;
   color: #3c3463;
   margin-bottom: 30px;
+
+  @media (max-width: 580px) {
+    font-size: 28px;
+  }
 `;
 
 const Img = styled.img`
@@ -29,6 +33,10 @@ const Img = styled.img`
 
   @media (max-width: 925px) {
     z-index: -2;
+  }
+
+  @media (max-width: 670px) {
+    display: none;
   }
 `;
 
@@ -44,6 +52,12 @@ const Video = styled.a`
 
   @media (max-width: 925px) {
     opacity: 1;
+  }
+
+  @media (max-width: 580px) {
+    width: 80%;
+    margin: 0 auto;
+    height: 200px;
   }
 `;
 

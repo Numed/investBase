@@ -27,6 +27,10 @@ const Section = styled.section`
   @media (max-width: 925px) {
     width: 95%;
   }
+
+  @media (max-width: 780px) {
+    width: 100%;
+  }
 `;
 
 const SectionInner = styled.div`
@@ -48,6 +52,10 @@ const TextSection = styled.div`
     width: 50%;
     margin-left: 50px;
   }
+
+  @media (max-width: 480px) {
+    margin-left: 10px;
+  }
 `;
 
 const TextTitle = styled.h2`
@@ -56,6 +64,14 @@ const TextTitle = styled.h2`
   line-height: 69px;
   color: #fff;
   margin-bottom: 44px;
+
+  @media (max-width: 780px) {
+    font-size: 38px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 28px;
+  }
 `;
 
 const Button = styled.a`
@@ -70,6 +86,10 @@ const Button = styled.a`
   overflow: hidden;
   z-index: 1;
   cursor: pointer;
+
+  @media (max-width: 380px) {
+    padding: 6px 30px;
+  }
 
   &::before {
     content: "";
@@ -116,6 +136,11 @@ const ImgSection = styled.div`
 
   @media (max-width: 780px) {
     width: 70%;
+  }
+
+  @media (max-width: 480px) {
+    width: 100%;
+    min-height: 100%;
   }
 `;
 

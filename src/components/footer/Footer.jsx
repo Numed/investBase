@@ -23,6 +23,11 @@ const FooterNav = styled.div`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+
+  @media (max-width: 380px) {
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
 `;
 
 const LogoContainer = styled.div`
@@ -30,6 +35,10 @@ const LogoContainer = styled.div`
   align-items: flex-start;
   justify-content: flex-start;
   flex-direction: column;
+
+  @media (max-width: 380px) {
+    margin-bottom: 20px;
+  }
 `;
 
 const Logo = styled.a`
@@ -143,6 +152,11 @@ const App = styled.div`
   @media (max-width: 780px) {
     margin-left: 60px;
   }
+
+  @media (max-width: 380px) {
+    margin: 0;
+    flex-wrap: wrap;
+  }
 `;
 
 const AppChose = styled.div`
@@ -150,6 +164,10 @@ const AppChose = styled.div`
   aling-items: flex-start;
   flex-direction: column;
   margin-left: 80px;
+
+  @media (max-width: 380px) {
+    margin-left: 0;
+  }
 
   img {
     opacity: 0.6;
@@ -183,10 +201,20 @@ const AppChose = styled.div`
   &:nth-child(2) {
     padding-right: 50px;
     border-right: 1px solid rgba(255, 255, 255, 0.6);
+
+    @media (max-width: 380px) {
+      border: none;
+      margin-top: 20px;
+      padding: 0;
+    }
   }
 
   &:nth-child(3) {
     margin-left: 40px;
+
+    @media (max-width: 380px) {
+      margin-top: 20px;
+    }
   }
 `;
 

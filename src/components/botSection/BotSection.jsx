@@ -61,6 +61,12 @@ const CardHeader = styled.div`
   margin-bottom: 20px;
 `;
 
+const CardsContainer = styled(Cards)`
+  @media (max-width: 780px) {
+    margin-top: 40px;
+  }
+`;
+
 const Price = styled.span`
   font-weight: 500;
   font-size: 10px;
@@ -142,7 +148,7 @@ const BotSection = () => {
           <Button>See all Strategies</Button>
         </TextSection>
         <CardSection>
-          <Cards>
+          <CardsContainer>
             <CardContainer
               onMouseOver={(e) => onActive(e.target)}
               onMouseOut={(e) => onDeactive(e.target)}
@@ -239,7 +245,7 @@ const BotSection = () => {
                 <TotalPercent>1169.39%</TotalPercent>
               </CardInner>
             </CardContainer>
-          </Cards>
+          </CardsContainer>
         </CardSection>
       </SectionInner>
     </Section>

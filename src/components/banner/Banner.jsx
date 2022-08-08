@@ -33,6 +33,10 @@ const BannerTitle = styled.h2`
   @media (max-width: 780px) {
     font-size: 46px;
   }
+
+  @media (max-width: 580px) {
+    font-size: 28px;
+  }
 `;
 
 const BannerSubtitle = styled.h3`
@@ -54,6 +58,14 @@ const Statiscics = styled.div`
   @media (max-width: 780px) {
     width: 100%;
   }
+
+  @media (max-width: 580px) {
+    padding-top: 50px;
+  }
+
+  @media (max-width: 480px) {
+    flex-wrap: wrap;
+  }
 `;
 
 const BannerItem = styled.div`
@@ -74,18 +86,41 @@ const BannerItem = styled.div`
     @media (max-width: 925px) {
       font-size: 42px;
     }
+
+    @media (max-width: 580px) {
+      font-size: 28px;
+    }
+    @media (max-width: 480px) {
+      margin-bottom: 14px;
+    }
   }
 
   h5 {
     font-weight: 400;
     font-size: 22px;
     line-height: 28px;
+
+    @media (max-width: 580px) {
+      font-size: 24px;
+      text-align: center;
+    }
   }
 
   @media (max-width: 780px) {
     min-width: 33.3%;
     width: 0;
     height: 100%;
+  }
+
+  @media (max-width: 580px) {
+    min-width: 0;
+  }
+
+  @media (max-width: 480px) {
+    min-width: 60%;
+    &:not(:first-child) {
+      margin-top: 40px;
+    }
   }
 `;
 

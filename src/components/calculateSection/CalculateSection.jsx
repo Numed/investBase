@@ -10,6 +10,15 @@ const Section = styled.section`
   width: 100%;
   height: 100vh;
   position: relative;
+
+  @media (max-width: 850px) {
+    height: 80vh;
+  }
+
+  @media (max-width: 380px) {
+    height: 40vh;
+    padding: 60px;
+  }
 `;
 
 const SectionInner = styled.div`
@@ -45,6 +54,10 @@ const Title = styled.h2`
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+
+  @media (max-width: 580px) {
+    font-size: 38px;
+  }
 `;
 
 const Icons = styled.div`
@@ -54,6 +67,10 @@ const Icons = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: 380px) {
+    display: none;
+  }
 
   span {
     position: absolute;
@@ -80,6 +97,10 @@ const Icons = styled.div`
 
     &:nth-child(6) {
       right: 4%;
+
+      @media (max-width: 780px) {
+        right: 9%;
+      }
     }
   }
 `;

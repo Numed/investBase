@@ -33,6 +33,10 @@ export const SectionTitle = styled.h2`
   @media (max-width: 780px) {
     font-size: 54px;
   }
+
+  @media (max-width: 580px) {
+    font-size: 36px;
+  }
 `;
 
 export const SectionInner = styled.div`
@@ -69,6 +73,11 @@ export const Cards = styled.div`
   @media (max-width: 925px) {
     gap: 50px;
   }
+
+  @media (max-width: 580px) {
+    grid-template-columns: repeat(1, 1fr);
+    justify-content: center;
+  }
 `;
 
 export const Card = styled.div`
@@ -92,6 +101,15 @@ export const Card = styled.div`
 
   @media (max-width: 780px) {
     min-height: 370px;
+  }
+
+  @media (max-width: 580px) {
+    width: 75%;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 480px) {
+    width: 90%;
   }
 `;
 
@@ -305,6 +323,10 @@ export const TextTitle = styled.h3`
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
+
+  @media (max-width: 480px) {
+    font-size: 38px;
+  }
 `;
 
 export const TextParagraph = styled.p`
@@ -312,6 +334,10 @@ export const TextParagraph = styled.p`
   line-height: 26px;
   color: #2f3158;
   margin-bottom: 50px;
+
+  @media (max-width: 480px) {
+    font-size: 18px;
+  }
 `;
 
 export const Button = styled.a`
@@ -333,6 +359,10 @@ export const Button = styled.a`
   transition: box-shadow 0.3s;
   transition: box-shadow 0.3s, -webkit-box-shadow 0.3s;
   cursor: pointer;
+
+  @media (max-width: 480px) {
+    width: 90%;
+  }
 
   &:hover {
     box-shadow: 0 0 16px #4e43ca59;
