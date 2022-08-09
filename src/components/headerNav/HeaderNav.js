@@ -59,6 +59,7 @@ const NavLinks = styled.div`
 const ButtonContainer = styled.div`
   display: flex;
   align-items: center;
+  margin-left: 40px;
 
   a {
     text-decoration: none;
@@ -93,6 +94,7 @@ const HamburgerMenu = styled.div`
   .fas {
     transform: scale(1.2);
     z-index: -1;
+    color: #3c3463;
   }
 
   @media (max-width: 850px) {
@@ -114,11 +116,6 @@ const HamburgerMenu = styled.div`
       width: 100%;
       z-index: 10;
       background: #fff;
-
-      & ~ .sign {
-        display: flex;
-        z-index: 11;
-      }
 
       & .fas {
         cursor: pointer;
@@ -145,6 +142,21 @@ const HamburgerMenu = styled.div`
           &:not(:first-child) {
             margin-left: 0;
             margin-top: 20px;
+          }
+        }
+
+        & .sign {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin-left: 0;
+          justify-content: center;
+
+          a {
+            margin-top: 15px;
+            &:last-child {
+              margin-left: 0;
+            }
           }
         }
       }
@@ -192,13 +204,13 @@ const HeaderNav = () => {
             <li className="navbar-link">
               <a href="#">Pricing</a>
             </li>
+            <ButtonContainer className="sign">
+              <a href="#">LogIn</a>
+              <a href="#">Get started</a>
+            </ButtonContainer>
           </NavLinks>
         </Ul>
       </nav>
-      <ButtonContainer className="sign">
-        <a href="#">LogIn</a>
-        <a href="#">Get started</a>
-      </ButtonContainer>
     </Header>
   );
 };
