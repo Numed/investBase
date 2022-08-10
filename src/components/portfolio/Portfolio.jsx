@@ -1,241 +1,26 @@
-import styled from "styled-components";
 import { useState } from "react";
-import agree from "../../assets/List/agree.svg";
 import usdt from "../../assets/CryptoIcons/usdt.svg";
 import btc from "../../assets/CryptoIcons/btc.svg";
 import eth from "../../assets/CryptoIcons/eth.svg";
 import link from "../../assets/CryptoIcons/link.svg";
 import uni from "../../assets/CryptoIcons/uni.svg";
 import doge from "../../assets/CryptoIcons/doge.svg";
-import firstLineChart from "../../assets/Charts/bg-line-chart1.svg";
-import secondLineChart from "../../assets/Charts/bg-line-chart2.svg";
-import thirdLineChart from "../../assets/Charts/bg-line-chart3.svg";
+import { Chart, ArcElement } from "chart.js";
+import { Doughnut } from "react-chartjs-2";
+import {
+  LineChart,
+  Input,
+  Crypto,
+  CryptoInner,
+  Section,
+  Circle,
+  Ul,
+  TextParagraph,
+  TextSection,
+  TextTitle,
+} from "./style";
 
-const Section = styled.section`
-  padding-top: 100px;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-
-  @media (max-width: 925px) {
-    padding: 100px 25px 0;
-  }
-
-  @media (max-width: 580px) {
-    padding: 50px 25px 0;
-    flex-wrap: wrap;
-  }
-`;
-
-const TextSection = styled.div`
-  width: 33.3%;
-  display: flex;
-  align-items: flex-start;
-  flex-direction: column;
-
-  @media (max-width: 850px) {
-    width: 50%;
-  }
-
-  @media (max-width: 580px) {
-    width: 90%;
-    margin-bottom: 40px;
-  }
-`;
-
-const TextTitle = styled.h2`
-  font-size: 52px;
-  line-height: 67px;
-  color: #2f3158;
-  font-weight: 400;
-  margin-bottom: 23px;
-
-  span {
-    font-weight: 700;
-    background: linear-gradient(to right, #837af9 0%, #4570d1 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  @media (max-width: 850px) {
-    font-size: 42px;
-  }
-
-  @media (max-width: 580px) {
-    font-size: 36px;
-    text-align: center;
-  }
-`;
-
-const TextParagraph = styled.p`
-  font-size: 26px;
-  line-height: 33px;
-  color: #2f3158;
-  margin-bottom: 59px;
-
-  @media (max-width: 850px) {
-    font-size: 23px;
-  }
-
-  @media (max-width: 580px) {
-    font-size: 22px;
-    margin-bottom: 30px;
-  }
-`;
-
-const Ul = styled.ul`
-  list-style: url(${agree});
-
-  li {
-    color: #4a4ae2;
-    font-size: 22px;
-    line-height: 28px;
-
-    &:not(:last-child) {
-      margin-bottom: 25px;
-    }
-    @media (max-width: 580px) {
-      font-size: 18px;
-    }
-  }
-
-  @media (max-width: 850px) {
-    margin-left: 20px;
-  }
-`;
-
-const Circle = styled.div`
-  width: 570px;
-  height: 570px;
-  border-radius: 50%;
-  border: 20px solid #ccc;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  filter: drop-shadow(10px 32.36px 30.0124px rgba(39, 39, 95, 0.4));
-
-  @media (max-width: 850px) {
-    width: 380px;
-    height: 380px;
-  }
-`;
-
-const Crypto = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 15px;
-
-  img {
-    transition: transform 0.2s, -webkit-transform 0.2s;
-    display: block;
-    width: 25px;
-    margin-right: 9px;
-
-    @media (max-width: 925px) {
-      width: 20px;
-    }
-  }
-
-  label {
-    width: 40px;
-    min-width: 40px;
-    color: #2f3158;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 15px;
-    margin-right: 9px;
-    text-transform: uppercase;
-    margin-top: 2px;
-  }
-
-  span {
-    width: 35px;
-    min-width: 35px;
-    margin-left: 12px;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 15px;
-    color: #2f3158;
-  }
-
-  &:hover > img {
-    transform: scale(1.2);
-    filter: drop-shadow(3px 5.36px 4.01px rgba(39, 39, 95, 0.19));
-  }
-
-  &:hover > label,
-  &:hover > span {
-    font-weight: 600;
-    color: #4a4ae2;
-  }
-`;
-
-const Input = styled.input`
-  appearance: none;
-  --webkit-appearance: none;
-  width: 170px;
-  min-width: 170px;
-  height: 1px;
-  background-color: #ced2e5;
-  outline: none;
-  transition: 0.3s;
-
-  &::-webkit-slider-thumb,
-  &::-moz-slider-thumb {
-    content: "";
-    height: 20px;
-    width: 15px;
-    border-radius: 4px;
-    appearance: none;
-    background: #ced2e5;
-    cursor: pointer;
-  }
-
-  &:hover,
-  &::-webkit-slider-thumb:hover,
-  &::-moz-slider-thumb:hover {
-    background: #4a4ae2;
-    filter: drop-shadow(0px 0px 20px #4a4ae2);
-  }
-`;
-
-const LineChart = styled.div`
-  display: block;
-  width: 100%;
-  height: 320px;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  background: url(${firstLineChart}), url(${secondLineChart}),
-    url(${thirdLineChart});
-  background-repeat: no-repeat;
-  background-position: center, center bottom, center;
-  pointer-events: none;
-  position: relative;
-
-  &::after {
-    content: none;
-    display: block;
-    width: 100%;
-    height: 324px;
-    background: linear-gradient(180deg, #ffffff 0%, #dfe3f4 100%);
-    border-radius: 8px 8px 0 0;
-    z-index: -1;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-  }
-`;
-
-const CryptoInner = styled.div`
-  width: 80%;
-  height: 60%;
-`;
+Chart.register(ArcElement);
 
 const Portfolio = () => {
   const [USDTheter, setUsdt] = useState(20);
@@ -244,6 +29,25 @@ const Portfolio = () => {
   const [Link, setLink] = useState(10);
   const [Dai, setDai] = useState(5);
   const [Doge, setDoge] = useState(22);
+
+  const data = {
+    datasets: [
+      {
+        data: [USDTheter, Bitcoin, Ethurium, Link, Dai, Doge],
+        backgroundColor: [
+          "#26a17b",
+          "#f7931a",
+          "#627eea",
+          "#3d63c8",
+          "#df7eac",
+          "#bfbbbb",
+        ],
+        hoverOffset: 4,
+        borderWidth: 0,
+        cutout: "95%",
+      },
+    ],
+  };
 
   return (
     <>
@@ -263,6 +67,7 @@ const Portfolio = () => {
           </Ul>
         </TextSection>
         <Circle>
+          <Doughnut data={data} className="doughnut" />
           <CryptoInner>
             <Crypto>
               <img src={usdt} alt="USD Tether" />
