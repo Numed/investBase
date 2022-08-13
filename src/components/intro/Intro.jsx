@@ -226,6 +226,10 @@ const CircleWave = styled.div`
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 
+  @media (max-width: 850px) {
+    animation: wave2;
+  }
+
   &:nth-child(2) {
     animation-delay: 5s;
   }
