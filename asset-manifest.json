@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/investBase/static/css/main.10b0b137.css",
-    "main.js": "/investBase/static/js/main.d7324570.js",
+    "main.css": "/investBase/static/css/main.a7744503.css",
+    "main.js": "/investBase/static/js/main.1de12926.js",
     "static/media/video-overlay.svg": "/investBase/static/media/video-overlay.4bb5f47dab8afabe8ee745daf0c02aaa.svg",
     "static/media/video-bg.svg": "/investBase/static/media/video-bg.8ce91a2356df04242ef62d854842b869.svg",
     "static/media/sw-capital.svg": "/investBase/static/media/sw-capital.a8b67c083a2b326de20481f4f4c551b9.svg",
@@ -63,11 +63,11 @@
     "index.html": "/investBase/index.html",
     "static/media/binance_logo.svg": "/investBase/static/media/binance_logo.0e179f1cd967f912ad257de0590b647b.svg",
     "static/media/ftx_logo.svg": "/investBase/static/media/ftx_logo.1ad5f035ed4b3cc619c7a624aaac1694.svg",
-    "main.10b0b137.css.map": "/investBase/static/css/main.10b0b137.css.map",
-    "main.d7324570.js.map": "/investBase/static/js/main.d7324570.js.map"
+    "main.a7744503.css.map": "/investBase/static/css/main.a7744503.css.map",
+    "main.1de12926.js.map": "/investBase/static/js/main.1de12926.js.map"
   },
   "entrypoints": [
-    "static/css/main.10b0b137.css",
-    "static/js/main.d7324570.js"
+    "static/css/main.a7744503.css",
+    "static/js/main.1de12926.js"
   ]
 }
