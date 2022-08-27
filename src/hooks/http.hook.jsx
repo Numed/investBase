@@ -2,12 +2,10 @@ import { useState, useEffect } from "react";
 
 export const UseHook = () => {
   const useOnScreen = (ref, rootMargin = "0px") => {
-    // State and setter for storing whether element is visible
     const [isIntersecting, setIntersecting] = useState(false);
     useEffect(() => {
       const observer = new IntersectionObserver(
         ([entry]) => {
-          // Update our state when observer callback fires
           setIntersecting(entry.isIntersecting);
         },
         {
@@ -18,9 +16,11 @@ export const UseHook = () => {
         observer.observe(ref.current);
       }
       return () => {
+        // eslint-disable-next-line
         observer.unobserve(ref.current);
       };
-    }, []); // Empty array ensures that effect is only run on mount and unmount
+      // eslint-disable-next-line
+    }, []);
     return isIntersecting;
   };
   return { useOnScreen };

@@ -136,7 +136,7 @@ filter: drop-shadow(10px 32.36px 30.0124px rgba(39, 39, 95, 0.4));
 @media(max-width: 525px){
     display: none;
 }
-`;
+`
 
 export const CryptoInner = styled.div`
   width: 60%;
