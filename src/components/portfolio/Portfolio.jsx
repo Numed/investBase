@@ -1,4 +1,4 @@
-import { useEffect, useContext } from "react";
+import { useContext } from "react";
 
 import { Chart, ArcElement } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
@@ -19,25 +19,8 @@ import Context from "../context/Context";
 Chart.register(ArcElement);
 
 const Portfolio = () => {
-  const {
-    dataCrypto,
-    USDTheter,
-    setUsdt,
-    Bitcoin,
-    setBtc,
-    Ethurium,
-    setEth,
-    Link,
-    setLink,
-    Dai,
-    setDai,
-    Doge,
-    setDoge,
-  } = useContext(Context);
-
-  useEffect(() => {
-    updateValues();
-  }, [USDTheter, Bitcoin, Ethurium, Link, Dai, Doge]);
+  const { dataCrypto, USDTheter, Bitcoin, Ethurium, Link, Dai, Doge } =
+    useContext(Context);
 
   const data = {
     datasets: [
@@ -56,24 +39,6 @@ const Portfolio = () => {
         cutout: "95%",
       },
     ],
-  };
-
-  const updateValues = () => {
-    const arrValues = [
-      { value: USDTheter, action: setUsdt },
-      { value: Bitcoin, action: setBtc },
-      { value: Ethurium, action: setEth },
-      { value: Link, action: setLink },
-      { value: Dai, action: setDai },
-      { value: Doge, action: setDoge },
-    ];
-    arrValues.map(({ value, action }) => {
-      const filtredValues = arrValues.filter((items) => items.value !== value);
-      console.log(filtredValues);
-      //   filtredValues.map((cur) => {
-      //     // cur.action(cur.value - 1);
-      //   });
-    });
   };
 
   return (
