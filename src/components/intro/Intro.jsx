@@ -84,7 +84,7 @@ const GetStarted = styled.a`
   margin: 0 0 40px 0;
   padding-top: 5px;
   background: #4a4ae2;
-  text-decotaion: none;
+  text-decoration: none;
   transition: -webkit-box-shadow 0.3s;
   cursor: pointer;
 

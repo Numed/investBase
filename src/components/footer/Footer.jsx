@@ -24,7 +24,7 @@ const FooterNav = styled.div`
   justify-content: space-evenly;
   align-items: center;
 
-  @media (max-width: 380px) {
+  @media (max-width: 450px) {
     flex-wrap: wrap;
     justify-content: space-around;
   }
@@ -36,8 +36,8 @@ const LogoContainer = styled.div`
   justify-content: flex-start;
   flex-direction: column;
 
-  @media (max-width: 380px) {
-    margin-bottom: 20px;
+  @media (max-width: 450px) {
+    width: 82%;
   }
 `;
 
@@ -61,11 +61,19 @@ const Copyright = styled.span`
   line-height: 15px;
   color: #ffffff80;
   width: 70%;
+
+  @media (max-width: 450px) {
+    margin-bottom: 15px;
+  }
 `;
 
 const Social = styled.div`
   ul {
     list-style: none;
+
+    @media (max-width: 450px) {
+      margin-left: 9px;
+    }
   }
 
   li {
@@ -147,26 +155,31 @@ const App = styled.div`
     font-size: 12px;
     line-height: 15px;
     color: #ffffff80;
+
+    @media (max-width: 450px) {
+      display: none;
+    }
   }
 
   @media (max-width: 780px) {
     margin-left: 60px;
   }
 
-  @media (max-width: 380px) {
+  @media (max-width: 450px) {
     margin: 0;
     flex-wrap: wrap;
+    justify-content: space-around;
   }
 `;
 
 const AppChose = styled.div`
   display: flex;
-  aling-items: flex-start;
+  align-items: flex-start;
   flex-direction: column;
   margin-left: 80px;
 
-  @media (max-width: 380px) {
-    margin-left: 0;
+  @media (max-width: 450px) {
+    margin-left: 40px;
   }
 
   img {
@@ -202,7 +215,7 @@ const AppChose = styled.div`
     padding-right: 50px;
     border-right: 1px solid rgba(255, 255, 255, 0.6);
 
-    @media (max-width: 380px) {
+    @media (max-width: 450px) {
       border: none;
       margin-top: 20px;
       padding: 0;
@@ -212,8 +225,9 @@ const AppChose = styled.div`
   &:nth-child(3) {
     margin-left: 40px;
 
-    @media (max-width: 380px) {
+    @media (max-width: 450px) {
       margin-top: 20px;
+      margin-left: 50px;
     }
   }
 `;

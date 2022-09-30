@@ -87,8 +87,9 @@ const Button = styled.a`
   z-index: 1;
   cursor: pointer;
 
-  @media (max-width: 380px) {
+  @media (max-width: 450px) {
     padding: 6px 30px;
+    margin-bottom: 20px;
   }
 
   &::before {

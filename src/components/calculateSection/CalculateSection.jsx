@@ -15,7 +15,7 @@ const Section = styled.section`
     height: 80vh;
   }
 
-  @media (max-width: 380px) {
+  @media (max-width: 450px) {
     height: 40vh;
     padding: 60px;
   }
@@ -68,7 +68,7 @@ const Icons = styled.div`
   align-items: center;
   justify-content: center;
 
-  @media (max-width: 380px) {
+  @media (max-width: 450px) {
     display: none;
   }
 
